@@ -1,8 +1,8 @@
-NTalk (Perguntas-Respostas)
+Projeto: (Perguntas-Respostas)
 ============================
 
 Sobre
-Este é um projeto exemplo utilizado como didátic: Aplicações webcom Node.js.
+Este é um projeto de perguntas e respostas, exemplo utilizado como didático: Aplicações webcom Node.js.
 
 Instalando
 Obs.: É necessário antes de instalar este projeto, ter instalado e rodando os bancos de dados.
