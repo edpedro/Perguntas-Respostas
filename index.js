@@ -1,6 +1,18 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const connection = require("./model/database");
+const perguntaModel = require("./model/Pergunta");
+//database
+connection
+  .authenticate()
+  .then(() => {
+    console.log("conexão feita com o banco");
+  })
+  .catch(msgErro => {
+    console.log(msgErro);
+  });
+
 //utilizando EJS
 app.set("view engine", "ejs");
 app.use(express.static("public"));
