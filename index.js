@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./model/database");
 const Pergunta = require("./model/Pergunta");
+const Resposta = require("./model/Resposta");
 //database
 connection
   .authenticate()
@@ -41,6 +42,21 @@ app.post("/salvarpegunta", (req, res) => {
     descricao: descricao
   }).then(() => {
     res.redirect("/");
+  });
+});
+
+app.get("/pergunta/:id", (req, res) => {
+  var id = req.params.id;
+  Pergunta.findOne({
+    where: { id: id }
+  }).then(pergunta => {
+    if (pergunta != undefined) {
+      res.render("listarPergunta", {
+        pergunta: pergunta
+      });
+    } else {
+      res.redirect("/");
+    }
   });
 });
 
