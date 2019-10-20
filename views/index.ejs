@@ -13,6 +13,9 @@
     <div class="card">
       <div class="card-body">
         <h3><%= pergunta.titulo %></h3>
+        <h5 class="formataDate">
+          <%= moment(pergunta.createdAt).format('DD/MM/YYYY HH:mm')+" hs" %>
+        </h5>
       </div>
       <div class="card-footer">
         <a href="/pergunta/<%= pergunta.id %>"

@@ -7,3 +7,7 @@ img {
 nav {
   margin-bottom: 20px;
 }
+.formataDate {
+  float: right;
+  font-size: 14px;
+}

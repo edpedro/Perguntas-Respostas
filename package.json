@@ -10,8 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parse": "^0.1.0",
+    "dateformat": "^3.0.3",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "moment": "^2.24.0",
     "mysql2": "^1.7.0",
     "nodemon": "^1.19.3",
     "sequelize": "^5.19.2"

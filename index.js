@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
+const moment = require("moment");
 const bodyParser = require("body-parser");
+var dateFormat = require("dateformat");
 const connection = require("./model/database");
 const Pergunta = require("./model/Pergunta");
 const Resposta = require("./model/Resposta");
+
 //database
 connection
   .authenticate()
@@ -25,7 +28,8 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   Pergunta.findAll({ raw: true, order: [["id", "DESC"]] }).then(perguntas => {
     res.render("index", {
-      perguntas: perguntas
+      perguntas: perguntas,
+      moment: moment
     });
   });
 });
