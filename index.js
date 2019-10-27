@@ -6,6 +6,8 @@ var dateFormat = require("dateformat");
 const connection = require("./model/database");
 const Pergunta = require("./model/Pergunta");
 const Resposta = require("./model/Resposta");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 //database
 connection
@@ -39,10 +41,12 @@ app.get("/perguntar", (req, res) => {
 });
 //Salvando no banco
 app.post("/salvarpegunta", (req, res) => {
+  var nome = req.body.nome;
   var titulo = req.body.titulo;
   var descricao = req.body.descricao;
 
   Pergunta.create({
+    nome: nome,
     titulo: titulo,
     descricao: descricao
   }).then(() => {
@@ -55,7 +59,7 @@ app.get("/pergunta/:id", (req, res) => {
   Pergunta.findOne({
     where: { id: id }
   }).then(pergunta => {
-    if (pergunta != undefined) {
+    if (pergunta) {
       Resposta.findAll({
         where: { PerguntaId: pergunta.id }, //buscando id na tabela de respostas
         order: [["id", "DESC"]]
@@ -68,6 +72,17 @@ app.get("/pergunta/:id", (req, res) => {
     } else {
       res.redirect("/");
     }
+  });
+});
+//Buscar
+app.get("/buscar", (req, res) => {
+  var { pesquisar } = req.query;
+  pesquisar = pesquisar.toLowerCase();
+
+  Pergunta.findAll({
+    where: { titulo: { [Op.like]: "%" + pesquisar + "%" } }
+  }).then(buscar => {
+    res.render("buscar", { buscar, moment });
   });
 });
 //Salvando resposta

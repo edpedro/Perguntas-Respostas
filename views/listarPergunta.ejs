@@ -9,7 +9,7 @@
     <hr />
     <form method="POST" action="/responder">
       <h3>Responda</h3>
-      <label>Resposta:</label>
+
       <textarea
         placeholder="Digite sua resposta"
         class="form-control"
@@ -27,6 +27,7 @@
     <div class="card">
       <div class="card-body">
         <p><%= resposta.corpo %></p>
+        <p><%= resposta.PerguntaId.nome %></p>
       </div>
     </div>
     <% }) %>

@@ -1,5 +1,15 @@
-<nav class="navbar navbar-light bg-primary">
-  <a href="/" class="navbar-brand">
-    <img src="/img/logo1.png" />
-  </a>
+<nav class="navbar navbar-dark bg-primary justify-content-between">
+  <a href="/"> <img src="/img/logo1.png"/></a>
+  <form class="form-inline" method="GET" action="/buscar">
+    <input
+      class="form-control mr-sm-2"
+      type="Pesquisar"
+      placeholder="Pesquisar"
+      aria-label="Pesquisar"
+      name="pesquisar"
+    />
+    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+      Pesquisar
+    </button>
+  </form>
 </nav>

@@ -1,15 +1,11 @@
 <%- include partials/hearder.ejs %>
 <body>
-  <%- include partials/navbar.ejs %>
+  <%- include partials/navbar.ejs %>   <div class="container">
+    <hr />
+    <h1>Pesquisar</h1>
+  
 
-  <div class="container">
-    <hr />
-    <h1>Perguntas - Respostas</h1>
-    <hr />
-    <a href="/perguntar" class="btn btn-info">Perguntar!!</a>
-    <hr />
-
-    <% perguntas.forEach(pergunta => { %>
+    <% buscar.forEach(pergunta => { %>
     <div class="card">
       <div class="b1 card-body">
         <h3><%= pergunta.titulo %></h3>
@@ -28,5 +24,6 @@
     </div>
     <% }) %>
   </div>
+</body>
 </body>
 <%- include partials/footer.ejs %>
