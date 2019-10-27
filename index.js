@@ -78,7 +78,6 @@ app.get("/pergunta/:id", (req, res) => {
 app.get("/buscar", (req, res) => {
   var { pesquisar } = req.query;
   pesquisar = pesquisar.toLowerCase();
-
   Pergunta.findAll({
     where: { titulo: { [Op.like]: "%" + pesquisar + "%" } }
   }).then(buscar => {

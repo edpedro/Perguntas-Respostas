@@ -1,28 +1,31 @@
 <%- include partials/hearder.ejs %>
 <body>
   <%- include partials/navbar.ejs %>   <div class="container">
-    <hr />
-    <h1>Pesquisar</h1>
-  
-
-    <% buscar.forEach(pergunta => { %>
-    <div class="card">
-      <div class="b1 card-body">
-        <h3><%= pergunta.titulo %></h3>
-        <h5 class="formataDate">
-          <%= moment(pergunta.createdAt).format('DD/MM/YYYY HH:mm')+" hs" %>
-        </h5>
-      </div>
-      <div class="card-footer">
-        <h5 class="formataDate">
-          <p>Nome: <%= pergunta.nome %></p>
-        </h5>
-        <a href="/pergunta/<%= pergunta.id %>" class="Res1"
-          ><button class="btn btn-primary btn-sm">Responder</button></a
-        >
-      </div>
-    </div>
-    <% }) %>
+    <hr />   
+    <% if(buscar.length > 0){ %>  
+          <% buscar.forEach(pergunta => { %>
+          <div class="card">
+            <div class="b1 card-body">
+              <h3><%= pergunta.titulo %></h3>
+              <h5 class="formataDate">
+                <%= moment(pergunta.createdAt).format('DD/MM/YYYY HH:mm')+" hs" %>
+              </h5>
+            </div>
+            <div class="card-footer">
+              <h5 class="formataDate">
+                <p>Nome: <%= pergunta.nome %></p>
+              </h5>
+              <a href="/pergunta/<%= pergunta.id %>" class="Res1"
+                ><button class="btn btn-primary btn-sm">Responder</button></a
+              >
+            </div>
+          </div>
+          <% }) %>
+      <% } else{ %>
+        <div class="b2 card-body">
+              <h3>NÃO ENCONTRADO ):</h3>            
+            </div>
+      <% } %>  
   </div>
 </body>
 </body>

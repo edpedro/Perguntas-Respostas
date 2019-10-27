@@ -1,15 +1,41 @@
-<nav class="navbar navbar-dark bg-primary justify-content-between">
-  <a href="/"> <img src="/img/logo1.png"/></a>
-  <form class="form-inline" method="GET" action="/buscar">
-    <input
-      class="form-control mr-sm-2"
-      type="Pesquisar"
-      placeholder="Pesquisar"
-      aria-label="Pesquisar"
-      name="pesquisar"
-    />
-    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-      Pesquisar
-    </button>
-  </form>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">Pergunta_Pesposta:</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/"
+          >Inicio <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/perguntar"
+          >Perguntar <span class="sr-only">(current)</span></a
+        >
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="/buscar">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Pesquisar"
+        aria-label="Pesquisar"
+        name="pesquisar"
+      />
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+        Pesquisar
+      </button>
+    </form>
+  </div>
 </nav>
